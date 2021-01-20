@@ -125,7 +125,7 @@ export default class SortableTable {
     }
     this.data.sort((row1, row2) => compareFn(row1[columnDescription.id], row2[columnDescription.id]));
 
-    let headerCell = this.element.querySelector(`[data-id=${columnDescription.id}]`);
+    const headerCell = this.element.querySelector(`[data-id=${columnDescription.id}]`);
     headerCell.dataset.order = orderValue;
     headerCell.append(this.getSortArrow());
     this.subElements.body.innerHTML = this.getTableRows();

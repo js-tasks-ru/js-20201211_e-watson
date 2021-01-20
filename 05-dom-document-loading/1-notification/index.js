@@ -2,6 +2,10 @@ export default class NotificationMessage {
   static notification = null;
 
   render() {
+    if (NotificationMessage.notification) {
+      NotificationMessage.notification.remove();
+    }
+
     const element = document.createElement("div");
     element.innerHTML = this.getHtmlTemplate();
     this.element = element.firstElementChild;
